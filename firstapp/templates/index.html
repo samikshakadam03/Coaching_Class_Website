@@ -1,0 +1,329 @@
+{%load static%}
+{%block body%}
+{%include 'navbar.html'%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Kadam EduWorld</title>
+
+  <!-- font Awesome CDN link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+  <!-- JQuery CDN link -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <style>
+    .notice {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      /* background-color: #FFF; */
+      font-size: 16px;
+      /* background-color: #f7f7f7; */
+    }
+
+    .marquee {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+      border: 1px solid rgba(0, 0, 0, .15);
+      /* background-color: #ffffff; */
+      overflow: hidden;
+      position: relative;
+      height: 50px;
+      width: 100%;
+      /* Full width of its parent */
+      white-space: nowrap;
+      color: aliceblue;
+    }
+
+    .marquee p {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      /* Start off the right edge */
+      transform: translateX(100%);
+      /* Animate to the left */
+      animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation start -->
+  <nav>
+    <img src="../static/img/menon.jpg" class="logo" alt="" />
+
+
+    <div class="navigation">
+      <ul>
+        <i id="menu-close" class="fas fa-times"></i>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="{%url 'about'%}">About us</a></li>
+        <li><a href="{%url 'courses'%}">Courses</a></li>
+        <li><a href="{%url 'contact'%}">Contact</a></li>
+       
+        
+        <li><a href="{%url 'result'%}">Result</a></li>
+        <li><a href="gallery">Gallery</a></li>
+        {%if user.is_authenticated%}
+				<li><a href="{%url 'logout'%}">Logout</a></li>
+			
+				{%else%}
+        <li><a href="{%url 'signup'%}">Enquiry</a></li>
+        {%endif%}
+      
+      </ul>
+
+      <img src="../static/img/menu.png" id="menu-btn" alt="" />
+    </div>
+  </nav>
+  <!-- Navigation ends -->
+ 
+  <!-- Hero section starts from here -->
+  <section id="home" style="height: 120vh;">
+    <h2>Menon's EduWorld<small>™</small></h2>
+    <p>Personalised attention to each student is our strength.</p>
+    <p>34 Years of Academic Excellence </p>
+    <pre>C.B.S.E  I.C.S.E. S.S.C.</pre>
+    <pre>COLLEGE SEMI</pre>
+    <Pre>Std VII - XII</Pre>
+    <pre>+91 9082078421 +91 8928944628</pre>
+    <div class="btn">
+      <a href="about" class="blue" >About Us</a>
+      <a href="login" class="yellow">Admission</a>
+    </div>
+  </section>
+  <!-- Hero section ends from here -->
+
+  <!-- Features section starts from here -->
+  <section id="features">
+    <h1>Why Menon's Eduworld?</h1>
+    <p></p>
+
+    <div class="fea-base">
+      <div class="fea-box">
+        <i class="fa-solid fa-book-bookmark"></i>
+        <h3>Exhaustive Study Material</h3>
+        <p>
+        <ul>
+          <li>Subject wise notes as prescribed by govt. school, colleges or university</li>
+          <li>Covering textual and non textual questions.</li>
+          <li>Grammar book, formula book & writing skills covered in separate books. </li>
+
+        </ul>
+        </p>
+      </div>
+
+      <div class="fea-box">
+        <i class="fa-solid fa fa-book"></i>
+        <h3>Cope Up Sessions</h3>
+        <p>
+        <ul>
+          <li>For below average students / absentees.</li>
+          <li>10 - 12 students a batch.</li>
+          <li>Separate teachers assigned to this students. </li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="fea-box">
+        <i class="fas fa fa-pencil"></i>
+        <h3>Test Series</h3>
+        <p>
+        <ul>
+          <li>Weekly tests.</li>
+          <li>Unit tests, semesters before school and college exams.</li>
+          <li>Minimum 4 preliums conducted.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="fea-box">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Technology</h3>
+        <p>
+        <ul>
+          <li>SMS of marks & absenteeism</li>
+          <li>Audio Video Teaching through educational software & LCD projectors.</li>
+         <!--<li>Login / password for every student for parent to track academic record on app. </li>-->
+        </ul>
+        </p>
+      </div>
+
+      <div class="fea-box">
+        <i class="fas fa-user"></i>
+        <h3>Parents Interaction</h3>
+        <p>
+        <ul>
+          <li>Twice every semester.</li>
+          <li>House Visit as per students and parents convenience.</li>
+          <li>Only class in Mulund & Thane to do so.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="fea-box">
+        <i class="fas fa-award"></i>
+        <h3>Guidence</h3>
+        <p>
+        <ul>
+          <li>Science Practicals</li>
+          <li>Stress & Time Management</li>
+          <li>Career Guidance seminars</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Features section ends from here -->
+
+
+  <!-- About section starts from here -->
+  <section id="about-container">
+    <div class="about-img">
+      <img src="../static/img/teaching.jpg" alt="" />
+    </div>
+    <div class="about-text">
+      <h2>
+        Welcome to Menon's EduWorld, Enhance your future with best coaching classes.
+      </h2>
+      <p>
+        <b> We at Menon's are committed to provide sustainable and student centric quality education to prepare students
+          for careers in todays competitive world with our quality of staff and tutors. We at Menon are having a vision
+          to be renounced as an institute providing remarkable and quality education which motivates each student to
+          reach their full potential.</b>
+      </p>
+
+      <div class="about-fe">
+        <img src="../static/img/fe1.png" alt="" />
+        <div class="fe-text">
+          <h5>Personalized Learning Plans:</h5>
+          <p>
+            Offering customized learning plans that cater to each student's unique strengths and areas for improvement.
+          </p>
+        </div>
+      </div>
+      <div class="about-fe">
+        <img src="../static/img/fe2.png" alt="" />
+        <div class="fe-text">
+          <h5>Expert Faculty Team: </h5>
+          <p>
+            Education is the key to success in life and teachers make lasting impact on the lives on their students.
+            site
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </section>
+ <!-- about.html -->
+ <!-- <div class="row"> -->
+  <h2 style="color: darkblue;font-size: 35px;text-align: center;">Reviews</h2>
+  <br>
+ <form action="" method="post">
+ 
+   <div class="container" style="display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;">
+{% for review in reviews %}
+<div class="card" style=" width: 48%;
+margin-bottom: 20px;
+padding: 20px;
+border: 1px solid #ccc;border-style: inset;">
+<!-- <div class="" style="padding: 58px;width: 42%;border-style: inset;margin-left: 64px;margin-bottom: 50px;"> -->
+    <p>{{ review.comment }}</p>
+   <p>Rating: {{ review.rate }}</p>
+    <p style="color: darkblue;">Posted by: {{ review.user.username }}</p>
+    <p style="color: darkblue;"> {{ review.created_at }}</p>
+</div>
+{% empty %}
+<p></p>
+{% endfor %}
+</div>
+</form>
+ <!-- Footer section starts from here -->
+ <footer>
+  <div class="footer-col">
+    <h3><a href="{%url 'about'%}" >About us</a></h3>
+ 
+  </div>
+
+  <div class="footer-col">
+    <h3><a href="{%url 'courses'%}" >Courses</a></h3>
+ 
+  </div>
+
+  <div class="footer-col">
+    <h3><a href="{%url 'contact'%}">Contact</a></h3>
+
+  </div>
+
+  <div class="footer-col">
+    <h3><a href="{%url 'result'%}">Result</a></h3>
+    
+  </div>
+
+  <div class="footer-col">
+    <h3><a href="{%url 'signup'%}">Enquiry</a></h3>
+   
+  </div>
+
+  <div class="footer-col">
+    <h3>Newsletter</h3>
+    <p>You can trust us. we only send promo offers.</p>
+
+    <div class="subscribe">
+      <input type="email" placeholder="Your email Address">
+      <a href="#" class="yellow">SUBSCRIBE</a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>
+      Copyright @ 2024 All rights reserved | Designed by Samiksha Kadam
+     
+    </p>
+    <div class="pro-links" style="font-size: 35px;background-color: transparent;">
+     
+      <a href="https://www.facebook.com/MenonEduWorld/?ref=embed_page"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/menon-edu-world/about/"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/menoneduworld/" ><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@menonmantras6340" ><i class="fab fa-youtube"></i></a>
+
+    </div>
+  </div>
+</footer>
+<!-- Footer section ends from here -->
+
+  <script>
+    // Show menu links on burger click
+    $("#menu-btn").click(function () {
+      $("nav .navigation ul").addClass("active");
+    });
+
+    // Hide navbar on click function
+    $("#menu-close").click(function () {
+      $("nav .navigation ul").removeClass("active");
+    });
+  </script>
+</body>
+
+</html>
+{%endblock%}

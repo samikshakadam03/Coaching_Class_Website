@@ -1,0 +1,244 @@
+{%load static%}
+{%block body%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us</title>
+
+	<!-- font Awesome CDN link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- External CSS -->
+
+	<link rel="stylesheet" href="{%static 'css/about.css'%}">
+	<link rel="stylesheet" href="{%static 'css/contact.css'%}">
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+	<link rel="stylesheet" href="{%static 'css/course-inner.css'%}">
+	<link rel="stylesheet" href="{%static 'css/blog.css'%}">
+
+
+	<!-- JQuery CDN link -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- Navigation start -->
+	<nav>
+		<img src="../static/img/menon.jpg" class="logo" alt="" />
+
+		<div class="navigation">
+			<ul>
+				<i id="menu-close" class="fas fa-times"></i>
+				<li><a href="/">Home</a></li>
+				<li><a href="{%url 'about'%}">About us</a></li>
+				<li><a href="{%url 'courses'%}"  >Courses</a></li>
+				<li><a href="{%url 'contact'%}" class="active">Contact</a></li>
+				
+				<li><a href="{%url 'result'%}">Result</a></li>
+				<li><a href="gallery">Gallery</a></li>
+				{%if user.is_authenticated%}
+				<li><a href="{%url 'logout'%}">Logout</a></li>
+				<!-- <li><a href="{%url 'signup'%}">Enquiry</a></li> -->
+				{%else%}
+				<li><a href="{%url 'signup'%}">Enquiry</a></li>
+				{%endif%}
+				
+			</ul>
+			
+			<img src="../static/img/menu.png" id="menu-btn" alt="" />
+		</div>
+	</nav>
+	<!-- Navigation ends -->
+
+
+	<!-- Hero section starts from here -->
+	<section id="about-home" style="height: 89vh;">
+		<h2>
+			Contact Us
+		</h2>
+	</section>
+	<!-- Hero section ends from here -->
+
+
+	<section id="contact">
+		<div class="getin">
+			<h2>Get in touch</h2>
+			<p>Looking for enquiry? Fill the form and take a step towards bright future.</p>
+
+			<div class="getin-details">
+				<h3>East Branch</h3>
+				<div>
+					<i class="fa-solid fa-map get"></i>
+					<span>1, Prachi Building, Opp. Omkar Hospital, Near Hanuman Chowk, Mulund East </span>
+
+				</div>
+
+				<h3>West Branch</h3>
+				<div>
+					<i class="fa-solid fa-map get"></i>
+					<span>5W8W+95X, Gavani Pada, Sarvodaya Nagar, Mulund West, Mumbai, Maharashtra 400080</span>
+
+				</div>
+
+
+				<h3>ICSE CBSE Branch</h3>
+				<div>
+					<i class="fa-solid fa-map get"></i>
+					<span>90 Feet Rd, Deendayal Nagar, Mulund East, Mumbai, Maharashtra 400081 </span>
+				</div>
+
+				<h3>Phone</h3>
+				<div>
+					<i class="fas fa-phone-alt get"></i>
+					<p>(+91) 98671 23456 <br> (+91) 9082078421</p>
+				</div>
+
+				<h3>Support</h3>
+				<div>
+					<i class="fa-solid fa-envelope get"></i>
+					<p>menoneduworld@gmail.com</p>
+				</div>
+
+				<h3>Follow Us</h3>
+				<div class="pro-links">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-linkedin-in"></i>
+
+				</div>
+			</div>
+		</div>
+
+		<form class="form" action="{%url 'contactus'%}" method="post">
+			{%csrf_token%}
+			<h4>Let's Connect</h4>
+			<p>How can we help you?</p>
+			<div class="form-col">
+
+				<input type="text" placeholder="Your Name" name="name" required>
+			</div>
+			<div class="form-col">
+				<input type="email" placeholder="Email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?" required>
+			</div>
+			
+			
+			
+			<div class="form-col"  font-family="Arial">
+				<textarea type="text" cols="30" rows="8" placeholder="Contact Us" name="message" required></textarea>
+			</div>
+
+			<div class="form-col">
+				<button type="submit" name="save" value="Submit">Send Message</button>
+			</div>
+		</form>
+	</section>
+
+
+	<section id="map">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.5811480034918!2d72.9595013!3d19.169803299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b857705e2979%3A0x4e2782679ee6a01c!2sMenon%20Eduworld!5e0!3m2!1sen!2sin!4v1708948355567!5m2!1sen!2sin"
+			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.6680275628523!2d72.94290217466727!3d19.166003449141943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9741535361d%3A0xdae313880cd74277!2sMenon%20Eduworld%20West!5e0!3m2!1sen!2sin!4v1708948985165!5m2!1sen!2sin"
+			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.582461682533!2d72.95928337466748!3d19.169745849023904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8eeee628d75%3A0x116c2ceeca1d880!2sPoornima%20Darshan%2C%2090%20Feet%20Rd%2C%20Deendayal%20Nagar%2C%20Mulund%20East%2C%20Mumbai%2C%20Maharashtra%20400081!5e0!3m2!1sen!2sin!4v1708950309174!5m2!1sen!2sin"
+			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+
+
+
+  <!-- Footer section starts from here -->
+  <footer>
+    <div class="footer-col">
+      <h3><a href="{%url 'about'%}" >About us</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'courses'%}" >Courses</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'contact'%}">Contact</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'result'%}">Result</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'signup'%}">Enquiry</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3>Newsletter</h3>
+      <p>You can trust us. we only send promo offers.</p>
+
+      <div class="subscribe">
+        <input type="email" placeholder="Your email Address">
+        <a href="#" class="yellow">SUBSCRIBE</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>
+        Copyright @ 2024 All rights reserved | Designed by Samiksha Kadam
+       
+      </p>
+      <div class="pro-links" style="font-size: 35px;background-color: transparent;">
+       
+        <a href="https://www.facebook.com/MenonEduWorld/?ref=embed_page"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/menon-edu-world/about/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/menoneduworld/" ><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@menonmantras6340" ><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </footer>
+  <!-- Footer section ends from here -->
+
+	
+
+<script>
+	// Show menu links on burger click
+	$('#menu-btn').click(function () {
+		$('nav .navigation ul').addClass('active')
+	});
+
+	// Hide navbar on click function
+	$('#menu-close').click(function () {
+		$('nav .navigation ul').removeClass('active')
+	});
+	</script>
+
+</body>
+
+</html>
+{%endblock%}

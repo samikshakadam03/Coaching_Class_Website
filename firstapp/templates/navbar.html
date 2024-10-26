@@ -1,0 +1,43 @@
+ <!-- Navigation start -->
+
+ {%load static%}
+ <!-- External CSS -->
+ <link rel="stylesheet" href="{%static 'css/style.css'%}">
+ <nav style="top: 0px;">
+  <img src="../static/img/menon.jpg" class="logo" alt=""  />
+    
+
+    <div class="navigation">
+      <ul>
+        <i id="menu-close" class="fas fa-times"></i>
+        <li><a href="/" >Home</a></li>
+        <li><a href="about">About us</a></li>
+        <li><a href="courses">Courses</a></li>
+        <li><a href="contact">Contact</a></li>
+       
+        <li><a href="{%url 'result'%}">Result</a></li>
+        <li><a href="gallery">Gallery</a></li>
+        {%if user.is_authenticated%}
+				<li><a href="{%url 'logout'%}">Logout</a></li>
+			
+				{%else%}
+        	<li><a href="{%url 'signup'%}">Enquiry</a></li>
+        {%endif%}
+      </ul>
+
+      <img src="../static/img/menu.png" id="menu-btn" alt="" />
+    </div>
+  </nav>
+  
+  <script>
+    // Show menu links on burger click
+    $("#menu-btn").click(function () {
+      $("nav .navigation ul").addClass("active");
+    });
+
+    // Hide navbar on click function
+    $("#menu-close").click(function () {
+      $("nav .navigation ul").removeClass("active");
+    });
+  </script>
+  <!-- Navigation ends -->

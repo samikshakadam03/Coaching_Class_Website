@@ -1,0 +1,362 @@
+{%load static%}
+{%block body%}
+{%include 'navbar.html'%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Courses</title>
+
+	<!-- font Awesome CDN link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- External CSS -->
+
+
+
+	<link rel="stylesheet" href="{%static 'css/about.css'%}">
+	<link rel="stylesheet" href="{%static 'css/contact.css'%}">
+	<link rel="stylesheet" href="{%static 'css/courses.css'%}">
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+	<link rel="stylesheet" href="{%static 'css/course-inner.css'%}">
+	<link rel="stylesheet" href="{%static 'css/blog.css'%}">
+
+	<!-- JQuery CDN link -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+		<style>
+			/* Default styles */
+
+/* Add this to your existing CSS file */
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+  .course-head {
+    text-align: center;
+  }
+
+  .course-img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .c-name h2 {
+    font-size: 24px;
+  }
+
+  .overview {
+    padding: 20px;
+  }
+
+  /* Adjust styles for the list items */
+  ul {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  /* Adjust font size for list items */
+  li {
+    font-size: 16px;
+  }
+}
+
+/* For screens between 768px and 992px */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Adjust styles as needed */
+}
+
+/* For screens larger than 992px */
+@media (min-width: 992px) {
+  /* Adjust styles as needed */
+}
+		</style>
+</head>
+
+<body>
+	<!-- Navigation start -->
+	<nav>
+		<img src="../static/img/menon.jpg" class="logo" alt="" />
+
+
+		<div class="navigation">
+			<ul>
+				<i id="menu-close" class="fas fa-times"></i>
+				<li><a href="/">Home</a></li>
+				<li><a href="{%url 'about'%}">About us</a></li>
+				<li><a href="{%url 'courses'%}"class="active">Courses</a></li>
+				<li><a href="{%url 'contact'%}">Contact</a></li>
+				
+				<li><a href="{%url 'result'%}">Result</a></li>
+				<li><a href="gallery">Gallery</a></li>
+				{%if user.is_authenticated%}
+				<li><a href="{%url 'logout'%}">Logout</a></li>
+				<!-- <li><a href="{%url 'signup'%}">Enquiry</a></li> -->
+				{%else%}
+				<li><a href="{%url 'signup'%}">Enquiry</a></li>
+				{%endif%}
+				
+			</ul>
+			<img src="../static/img/menu.png" id="menu-btn" alt="" />
+		</div>
+	</nav>
+	<!-- Navigation ends -->
+
+
+	<!-- Hero section starts from here -->
+	<section id="about-home" style="height: 96vh;">
+		<h2>
+			Enroll Our Courses
+		</h2>
+	</section>
+	<!-- Hero section ends from here -->
+
+
+	<!-- Course body section starts -->
+	<section id="course-inner">
+		<div class="overview">
+
+
+
+			<img class="course-img" src="../static/img/school.jpg" alt="">
+
+			<div class="course-head">
+				<div class="c-name">
+					<h2 >School - VII - X (ICSE, CBSE, SSC, SEMI)</h2>
+
+				</div>
+			</div>
+
+
+			<hr>
+
+			<h3 style="font-size: 34px;padding: 35px 0 10px 0;text-align: center;"> Standards & Subjects we teach</h3>
+			
+<br>
+
+			<p style="text-align: center; color: black;"> 
+				<b style="font-size: 25px;"><i class="fa fa-book" aria-hidden="true" ></i> VIII IX X</b></p>
+			<ul style="text-align: center;">
+				 
+				<li style="font-size: 20px;">English</li>
+				<li style="font-size: 20px;">Hindi</li>
+				<li style="font-size: 20px;">Marathi</li>
+				<li style="font-size: 20px;">Sanskrit</li>
+				<li style="font-size: 20px;">Social Studies</li>
+				<li style="font-size: 20px;">Maths</li>
+				<li style="font-size: 20px;">Science</li>
+			</ul>
+			</p>
+			
+<br>
+<br>
+			<hr>
+			<hr>
+
+			<img class="course-img" src="../static/img/college-building-48296.jpg" alt="">
+
+			<div class="course-head">
+				<div class="c-name">
+					<h2>College - XI XII (Science, Commerce)</h2>
+
+				</div>
+			</div>
+			
+			<hr>
+
+			<h3 style="font-size: 34px;padding: 35px 0 10px 0;text-align: center;"> Science</h3>
+			
+<br>
+
+			<p style="text-align: center; color: black;"> 
+				<b style="font-size: 25px;"><i class="fa fa-book" aria-hidden="true" ></i>XI XII</b></p>
+			<ul style="text-align: center;" >
+
+				<li style="font-size: 20px;">Mathematics</li>
+				<li style="font-size: 20px;">Physics</li>
+				<li style="font-size: 20px;">Chemistry</li>
+				<li style="font-size: 20px;">Biology</li>
+		
+
+			</ul>
+			</p>
+				
+			<hr>
+
+			<p>
+			<ul>
+				<li>
+					<h3>JEE</h3>
+				</li>
+			</ul>
+
+			The Joint Entrance Examination (JEE) in India is a pivotal examination for aspiring engineers. Split into
+			two stages, JEE Main and JEE Advanced, it serves as the gateway to prestigious institutions like the Indian
+			Institutes of Technology (IITs) and National Institutes of Technology (NITs). JEE Main, the initial phase,
+			caters to a broad spectrum of candidates nationwide, acting as a qualifying round for various engineering
+			colleges.
+
+			JEE Advanced, the subsequent level, is exclusively for top performers in JEE Main, granting access to the
+			coveted IITs. The exam rigorously evaluates candidates' proficiency in physics, chemistry, and mathematics,
+			necessitating a comprehensive understanding of the 10+2 curriculum<br>
+			<p>
+			<ul>
+				<li>
+					<h3>NEET</h3>
+				</li>
+			</ul>
+			The National Eligibility cum Entrance Test (NEET) in India is a standardized entrance examination for
+			admission to undergraduate medical and dental programs in various medical colleges across the country.
+			Introduced in 2013, NEET replaced multiple state and national-level medical entrance exams, unifying the
+			admission process for medical courses. NEET is conducted by the National Testing Agency (NTA) and is
+			mandatory for students seeking admission to MBBS, BDS, and other related courses. The exam assesses
+			candidates' knowledge in physics, chemistry, and biology (botany and zoology). It follows a multiple-choice
+			question format and is conducted annually.
+			</p>
+			<br>
+			<br>
+			<hr>
+
+			
+			<h3 style="font-size: 34px;padding: 35px 0 10px 0;text-align: center;"> Commerce</h3>
+			
+<br>
+
+			<p style=" color: black; text-align: center;"> 
+				<b style="font-size: 25px;><i class="fa fa-book" aria-hidden="true" ></i>XI XII</b></p>
+			<ul  style="text-align: center;" >
+				 
+				<li style="font-size: 20px;">English</li>
+				<li style="font-size: 20px;"> Hindi</li>
+				<li style="font-size: 20px;">Marathi</li>
+				<li style="font-size: 20px;">French</li>
+				<li style="font-size: 20px;">Book Keeping</li>
+				<li style="font-size: 20px;">Maths I & II</li>
+				<li style="font-size: 20px;">OC</li>
+				<li style="font-size: 20px;">SP</li>
+			</ul>
+			</p>
+			<br>
+			<hr>
+
+			<h3>What you'll learn</h3>
+
+			<div class="learn">
+				<p>
+					<i class="far fa-check-circle"></i> Study techniques and time management
+				</p>
+				<p>
+					<i class="far fa-check-circle"></i> Subject-specific strategies for better understanding
+				</p>
+				<p>
+					<i class="far fa-check-circle"></i> Exam preparation tips and tricks
+				<p>
+					<i class="far fa-check-circle"></i> Effective note-taking methods
+				</p>
+				<p>
+					<i class="far fa-check-circle"></i> Critical thinking and analysis skills
+				</p>
+				<p>
+					<i class="far fa-check-circle"></i>Goal setting and achievement strategies
+				</p>
+
+				<div class="enroll-btn">
+					<a href="login" class="blue">Enroll Now</a>
+				</div>
+			</div>
+		</div>
+
+		
+	</section>
+
+
+	<!-- Course body section starts -->
+
+
+
+
+  <!-- Footer section starts from here -->
+  <footer>
+    <div class="footer-col">
+      <h3><a href="{%url 'about'%}" >About us</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'courses'%}" >Courses</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'contact'%}">Contact</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'result'%}">Result</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'signup'%}">Enquiry</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3>Newsletter</h3>
+      <p>You can trust us. we only send promo offers.</p>
+
+      <div class="subscribe">
+        <input type="email" placeholder="Your email Address">
+        <a href="#" class="yellow">SUBSCRIBE</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>
+        Copyright @ 2024 All rights reserved | Designed by Samiksha Kadam
+       
+      </p>
+      <div class="pro-links" style="font-size: 35px;background-color: transparent;">
+       
+        <a href="https://www.facebook.com/MenonEduWorld/?ref=embed_page"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/menon-edu-world/about/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/menoneduworld/" ><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@menonmantras6340" ><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </footer>
+  <!-- Footer section ends from here -->
+
+	<script>
+		// Show menu links on burger click
+		$('#menu-btn').click(function () {
+			$('nav .navigation ul').addClass('active')
+		});
+
+		// Hide navbar on click function
+		$('#menu-close').click(function () {
+			$('nav .navigation ul').removeClass('active')
+		});
+	</script>
+</body>
+
+</html>
+{%endblock%}

@@ -1,0 +1,433 @@
+{%load static%}
+{%block body%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Us</title>
+
+	<!-- font Awesome CDN link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- External CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+	<link rel="stylesheet" href="{%static 'css/about.css'%}">
+	<link rel="stylesheet" href="{%static 'css/blog.css'%}">
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	<!-- JQuery CDN link -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<style>
+		input[type=text],
+		select,
+		textarea {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-top: 6px;
+			margin-bottom: 16px;
+			resize: vertical;
+		}
+
+		input[type=submit] {
+			background-color: darkblue;
+			color: white;
+			padding: 7px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+
+		.container {
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+
+		.checked {
+			color: orange;
+		}
+
+		.card {
+			max-width: 33rem;
+			background: #fff;
+			margin: -16px 1rem;
+			padding: 1rem;
+			/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+			width: 100%;
+			text-align: center;
+			border-radius: 0.5rem;
+			/* border: black 1px; */
+		}
+
+		.star {
+			font-size: 6vh;
+			cursor: pointer;
+		}
+
+		.one {
+			color: rgb(255, 0, 0);
+		}
+
+		#star1:hover {
+			color: yellow;
+		}
+
+		#star2:hover {
+			color: yellow;
+		}
+
+		#star3:hover {
+			color: yellow;
+		}
+
+		#star4:hover {
+			color: yellow;
+		}
+
+		#star5:hover {
+			color: yellow;
+		}
+
+		.two {
+			color: rgb(255, 106, 0);
+		}
+
+		.three {
+			color: rgb(251, 255, 120);
+		}
+
+		.four {
+			color: rgb(255, 255, 0);
+		}
+
+		.five {
+			color: rgb(24, 159, 14);
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Navigation start -->
+	<nav>
+		<img src="../static/img/menon.jpg" class="logo" alt="" />
+
+		<div class="navigation">
+			<ul>
+				<i id="menu-close" class="fas fa-times"></i>
+				<li><a href="/">Home</a></li>
+				<li><a href="{%url 'about'%}" class="active">About us</a></li>
+				<li><a href="{%url 'courses'%}">Courses</a></li>
+				<li><a href="{%url 'contact'%}">Contact</a></li>
+				
+				<li><a href="{%url 'result'%}">Result</a></li>
+				<li><a href="gallery">Gallery</a></li>
+				{%if user.is_authenticated%}
+				<li><a href="{%url 'logout'%}">Logout</a></li>
+				<!-- <li><a href="{%url 'signup'%}">Enquiry</a></li> -->
+				{%else%}
+				<li><a href="{%url 'signup'%}">Enquiry</a></li>
+				{%endif%}
+			
+			</ul>
+
+			<img src="../static/img/menu.png" id="menu-btn" alt="" />
+		</div>
+	</nav>
+	<!-- Navigation ends -->
+
+
+	<!-- Hero section starts from here -->
+	<section id="about-home" style="height: 95vh;">
+		<h2>
+			About us
+		</h2>
+	</section>
+	<!-- Hero section ends from here -->
+
+
+	<!-- Blog container starts from here -->
+	<section id="blog-container">
+		<div class="blogs">
+			<div class="post">
+				<img src="/static/img/anil sir.jpg" alt="" height="500px">
+				<h3>Founder, Dr. Prof. Anil Menon Sir</h3>
+				<p style="color: black;">From the inception of Menon's Eduworld, our guiding principle has always been to prioritize "PERSONALISED ATTENTION" in education. As we celebrate thirty-four years since the inception of this journey, I am profoundly gratified to witness the remarkable growth of Menon's Eduworld from a mere drop to an ocean today. Our institution has evolved dynamically over the years, thanks to the dedicated efforts of the entire Menon's team. Each day, we collectively strive to enhance the academic treasure of our students, ensuring that they receive the personalized care and support they deserve. As we move forward, let us continue to uphold our commitment to excellence and nurture the talents and potential of every child entrusted to our care. Together, we will continue to make a difference in the lives of our students and shape a brighter future for generations to come. Thank you. </p>
+
+				</p>
+
+			</div>
+
+			<div class="post">
+				<img src="/static/img/Reshma maam.jpg" alt="" height="500px">
+				<h3>Principal, Prof. Mrs.Reshma Anil Menon </h3>
+				<p  style="color: black;">
+					We at Menon's EduWorld believe that whoever comes to us should be given maximum service and that is
+					what we do. Our class is purely student oriented and is our batch size is limited so that need of
+					each and every student is fulfilled. All of our students are doing well in life. When i interact
+					with them i see my dreams coming true and thank god for rewarding my efforts. Our respected faculty
+					members bestow our students with their rich experiences from the corporate world and make them
+					ponder, analyse and innovate over relevant life situations. </p>
+
+				</p>
+
+			</div>
+
+			<div class="post">
+				<img src="../static/img/mission.jpg" alt="">
+				<h3>Mission</h3>
+				<p  style="color: black;">
+					Menon's EduWorld is dedicated to providing personalized and student-centered education, fostering holistic development, and nurturing individuals who are equipped with the skills, knowledge, and values to thrive in a dynamic global society. We are committed to delivering unparalleled service, guided by a relentless pursuit of excellence, innovation, and social responsibility.
+
+				</p>
+
+			</div>
+			<div class="post">
+				<img src="../static/img/vission.jpg" alt="">
+				<h3>Vision</h3>
+				<p  style="color: black;">
+					Our vision is to be recognized as a premier educational institution that empowers students to realize their full potential, excel academically, and become compassionate, ethical leaders. We aspire to create a dynamic learning environment where curiosity is nurtured, critical thinking is fostered, and creativity is celebrated. Through our unwavering dedication to student success and our commitment to excellence in teaching, Menon's EduWorld seeks to inspire positive change and make a meaningful impact on individuals, communities, and the world at large.
+
+				</p>
+
+			</div>
+			<div class="post">
+				<img src="../static/img/value.jpg" alt="">
+				<h3> Values</h3>
+				<p  style="color: black;">
+					At Menon's EduWorld, our values serve as the guiding principles that inform everything we do. We value excellence, as we constantly strive for the highest standards of academic achievement and personal growth. Integrity is fundamental to our ethos, and we uphold honesty, transparency, and ethical conduct in all our interactions. Respect for diversity and inclusivity is at the core of our community, fostering an environment of mutual understanding and appreciation. Finally, we believe in service to others, recognizing the importance of compassion, empathy, and social responsibility in shaping well-rounded individuals and contributing to the greater good.
+
+				</p>
+
+			</div>
+	</section>
+
+
+	<!-- Blog container ends from here -->
+
+	<section id="experts" style="margin-top: -190px;">
+		<h1>Our Team</h1>
+		<p>Meet the Powerhouse Teaching Team Redefining Classroom Excellence!</p>
+		<div class="expert-box">
+			<div class="profile">
+				<img src="../static/img/jay sir.jpg" height="300px" width="300px" alt="" />
+				<h6>Prof. Jay Yadav</h6>
+				<p>Head of Science Department</p>
+			</div>
+
+			<div class="profile">
+				<img src="../static/img/chirag sir.jpg" alt="" height="300px" width="300px"/>
+				<h6>Prof. Chirag Keluskar</h6>
+				<p>Head of Semi Department</p>
+			</div>
+
+			<div class="profile">
+				<img src="../static/img/Dhiraj sir.jpg"  alt="" height="300px" width="300px"/>
+				<h6>Prof. Dhiraj Rawat</h6>
+				<p>Mathmatics Expert</p>
+			</div>
+
+			<div class="profile">
+				<img src="../static/img/Reshma maam.jpg" alt="" height="300px" width="300px" />
+				<h6>Prof. Mrs. Reshma Menon </h6>
+				<p>Head of Commerce Department</p>
+			</div>
+
+			<div class="profile">
+				<img src="../static/img/daya sir.jpg" alt="" height="300px" width="300px" />
+				<h6>Mr. Daya Sir</h6>
+				<p>Head of SSC Department</p>
+			</div>
+
+			
+
+			<div class="profile">
+				<img src="../static/img/gajanand sir.jpg" alt="" height="300px" width="300px" />
+				<h6>Prof. Gajanand Yadav</h6>
+				<p>Head of CBSE ICSE Department</p>
+			</div>
+
+			<div class="profile">
+				<img src="../static/img/shital maam.jpg" alt="" height="300px" width="300px"/>
+				<h6>Prof. Mrs. Shital Dambe</h6>
+				<p>Head of West Department</p>
+			</div>
+
+			<div class="profile">
+				<img src="../static/img/pooja maam.jpg" alt="" height="300px" width="300px" />
+				<h6>Mrs. Pooja Chindarkar</h6>
+				<p>Admin</p>
+			</div>
+		</div>
+
+
+	</section>
+
+	<!-- ratings -->
+	<div class="row">
+		<div class="container" >
+			<form action="{% url 'review' %}" method="post">
+				{% csrf_token %}
+
+				<label for="subject" style="text-align: center;padding-left: 37%;font-size: 30px;color: darkblue;"><b>Feedback</b></label>
+				<textarea id="subject" name="comment" placeholder="Write something.."
+					style="height: 200px">{{ item.comment }}</textarea>
+
+				<div class="card" name="rate" style="padding: 0rem;margin-left: -13px;">
+					<input type="hidden" id="rate" name="rate" value="0"> <!-- Hidden input for rate -->
+					<span onclick="setRate(1)" class="star" name="rate" id="star1">★</span>
+					<span onclick="setRate(2)" class="star" name="rate" id="star2">★</span>
+					<span onclick="setRate(3)" class="star" name="rate" id="star3">★</span>
+					<span onclick="setRate(4)" class="star" name="rate" id="star4">★</span>
+					<span onclick="setRate(5)" class="star" name="rate" id="star5">★</span>
+				</div>
+
+				<br>
+				<input type="submit" value="Submit" style= "margin-left: 170px">
+
+			</form>
+		</div>
+		<form action="" method="post">
+			{%for item in review%}
+<h2 style="font-size: 15px;border:1px;border-color: black;box-shadow: 2px;">{{item.comment}}</h2>
+{%endfor%}
+</form>
+<br>
+		<script>
+			function setRate(value) {
+				document.getElementById('rate').value = value;
+			}
+		</script>
+
+
+
+
+
+  <!-- Footer section starts from here -->
+  <footer>
+    <div class="footer-col">
+      <h3><a href="{%url 'about'%}" >About us</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'courses'%}" >Courses</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'contact'%}">Contact</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'result'%}">Result</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3><a href="{%url 'signup'%}">Enquiry</a></h3>
+      <!--<li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Website</li>
+      <li>Marketing Service</li> -->
+    </div>
+
+    <div class="footer-col">
+      <h3>Newsletter</h3>
+      <p>You can trust us. we only send promo offers.</p>
+
+      <div class="subscribe">
+        <input type="email" placeholder="Your email Address">
+        <a href="#" class="yellow">SUBSCRIBE</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>
+        Copyright @ 2024 All rights reserved | Designed by Samiksha Kadam
+       
+      </p>
+      <div class="pro-links" style="font-size: 35px;background-color: transparent;">
+       
+        <a href="https://www.facebook.com/MenonEduWorld/?ref=embed_page"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/menon-edu-world/about/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/menoneduworld/" ><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@menonmantras6340" ><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </footer>
+  <!-- Footer section ends from here -->
+
+		<script>
+			// Show menu links on burger click
+			$('#menu-btn').click(function () {
+				$('nav .navigation ul').addClass('active')
+			});
+
+			// Hide navbar on click function
+			$('#menu-close').click(function () {
+				$('nav .navigation ul').removeClass('active')
+			});
+			//ratings
+			// script.js
+
+			// To access the stars
+			let stars =
+				document.getElementsByClassName("star");
+			let output =
+				document.getElementById("output");
+
+			// Funtion to update rating
+			function setRate(value) {
+				remove();
+				for (let i = 0; i < value; i++) {
+					if (value == 1) cls = "one";
+					else if (value == 2) cls = "two";
+					else if (value == 3) cls = "three";
+					else if (value == 4) cls = "four";
+					else if (value == 5) cls = "five";
+					stars[i].className = "star " + cls;
+					document.getElementById('rate').value = value;
+				}
+				output.innerText = "Rating is: " + value + "/5";
+			}
+
+			// To remove the pre-applied styling
+			function remove() {
+				let i = 0;
+				while (i < 5) {
+					stars[i].className = "star";
+					i++;
+				}
+			}
+			// 	function setRate(value) {
+			// 	document.getElementById('rate').value = value;
+			// }
+
+		</script>
+</body>
+
+</html>
+{%endblock%}
